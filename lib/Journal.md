@@ -21,3 +21,11 @@ The path is the tap Recruit, The button tells PartyModel to add hero to the
 list,PartyModel calls notifyListners(), QuestPartySummary listens because it uses
 conetext.watch,QuestPartySummary rebuilds and reads the new gold total, the Text widget show
 the new number
+
+Journal5
+Some bugs I faced was some missing closing braces in total cost. also a Adventure not found
+created lib/adventurer.dart and added import 'adventurer.dart';.Call notifyListeners() after changing _party,
+not before Placed it as the last line of addAdventurer and removeAdventurerUse read in onPressed, 
+most of my fixes were about keeping one source of truth (PartyModel), making every change go through methods that
+call notifyListeners(), 
+and letting widgets react instead of updating each other directly.
